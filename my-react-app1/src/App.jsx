@@ -1,55 +1,77 @@
-
-function Component() {
-  return <h1>React</h1>
-}
-
+import './App.css';
 function App() {
+    return (
+        <>
+            <header>
+                <div className="wrap">
+                    {/* 首頁廣告 */}
+                    <div className="header">
+                        <img src="../images/banner.jpg" alt="" />
+                    </div>
+                </div>
+            </header>
+            {/* 特色區 */}
+            <div class="content">
+                <div class="box">
+                    <h2><strong>教學影音</strong></h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime maiores voluptate enim in quos</p>
+                </div>
+                <div class="box">
+                    <h2><strong>良性互動</strong> </h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime maiores voluptate enim in quos</p>
+                </div>
+                <div class="box">
+                    <h2><strong>趨勢分享</strong></h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime maiores voluptate enim in quos</p>
+                </div>
+            </div>
+            {/* 主標 */}
+            <div class="abc"><h3>讓學習成為一種習慣</h3></div>
 
-  // 建立陣列(可以是任何形式的資料=>元件
-  const listItem = [
-    <Component key="0" />,
-    <Component key="1" />,
-    <Component key="2" />,
-  ]
-  const listBook = [
-    { bookName: 'HTML', id: 'book1' },
-    { bookName: 'CSS', id: 'book2' },
-    { bookName: 'JavaScript', id: 'book3' },
-  ]
+            {/* 推薦課程 */}
+            <div className='content2'>
+                <h1>推薦課程</h1>
+                <div className="contentClass">
+                    {/* 商品1 */}
+                    <div className="box2">
+                        <p><img src="../public/images/unity.jpg" alt="" /></p>
+                        <p><h3>Unity</h3></p>
+                        <p className='p-blue'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <p>講師</p>
+                        <p>課程時數</p>
+                        <p><span className='span1'>原價 1600</span><span>1200</span></p>
+                        <p><button>付款上課去</button></p>
+                    </div>
+                    {/* 商品2 */}
+                    <div className="box2">
+                        <p><img src="../public/images/gamesalad.jpg" alt="" /></p>
+                        <p><h3>gamesalad</h3></p>
+                        <p className='p-blue'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <p>講師</p>
+                        <p>課程時數</p>
+                        <p><span className='span1'>原價 1600</span><span>1200</span></p>
+                        <p><button>付款上課去</button></p>
+                    </div>
+                    {/* 商品3 */}
+                    <div className="box2">
+                        <p><img src="../public/images/gwd.jpg" alt="" /></p>
+                        <p><h3>google web</h3></p>
+                        <p className='p-blue'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <p>講師</p>
+                        <p>課程時數</p>
+                        <p><span className='span1'>原價 1600</span><span>1200</span></p>
+                        <p><button>付款上課去</button></p>
+                    </div>
+                </div>
+            </div>
 
-  // 過濾出陣列中，除了CSS的書本
-  const filterBooks = listBook.filter((book) => {
-    // if(book.bookName!=='CSS'){
-    //   return true
-    // }
+            {/* 頁尾 */}
 
-    // 三元運算子的判斷式(只能用在單層判斷)
-    //判斷式？條件成立：條件不成立
-    return book.bookName !== 'CSS' ? true : false
-  })
-  return (
-
-    <>
-      {/* 使用陣列方法1 */}
-      {listItem}
-      <hr />
-      {/* 使用陣列方法2=>map()=>此方法可以把一個陣列轉換成另一個陣列 */}
-      {
-        listBook.map((book) => {
-          return <div key={book.id}>{book.bookName}</div>
-        })
-      }
-      <hr />
-      {/* 顯示filter()過濾後的陣列資料 */}
-      {
-        filterBooks.map((book) => {
-          return <div key={book.id}>{book.bookName}</div>
-        })
-      }
-
-
-    </>
-  )
+            <footer>
+                <p>王育瑱 1112</p>
+            </footer>
+        </>
+    )
 }
 
 export default App

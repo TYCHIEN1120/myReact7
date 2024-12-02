@@ -1,30 +1,50 @@
-import { useState } from "react"
+import { useEffect } from "react";
+import axios from 'axios';
 
-function App(){
-    // 定義變數name與setName方法
-    const [name,setName]=useState('');
-    const [name2,setName2]=useState('');
+function App() {
 
-    function changeName(e){
-        setName2(e.target.value);
-    }
+    useEffect(() => {
+        (async () => {
+            const data = await axios.get('./F-C0032-001.json');
+            const { location } = data.data.cwaopendata.dataset;
+            console.log(location);
+        })
+    }, [])
 
-    return(
+
+    return (
         <>
-        <h2>設計一個輸入名字的欄位，並且可以即時顯示出來</h2>
-        <hr />
-        {/* <h3>目前文字方塊的內容:{name}</h3> */}
-
-        請輸入姓名1：<input type="text" value={name}onChange={(e)=>{
-            // console.log(e); //e:事件參數(event)
-            setName(e.target.value);
-        }}/>{name}
-
-        <br/>
-
-        請輸入姓名2：<input type="text" value={name2} onChange={changeName}/>{name2}
+            <h2>36小時天氣預報</h2>
+            <div classname="city">
+                <h3>台北市</h3>
+            </div>
+            <div className="weather">
+                <article className="today">
+                    <header>
+                        <h3>2日</h3>
+                        <h4>上午6:00~下午6:00</h4>
+                    </header>
+                    <figure><img src="./weatherIcon.多雲時陰.svg." alt="" /></figure>
+                    <h4>晴時多雲</h4>
+                </article>
+                <article className="today2">
+                    <header>
+                        <h3>2日</h3>
+                        <h4>上午6:00~下午6:00</h4>
+                    </header>
+                    <figure><img src="./weatherIcon.多雲時陰.svg." alt="" /></figure>
+                    <h4>晴時多雲</h4>
+                </article>
+                <article className="tomorrow">
+                    <header>
+                        <h3>2日</h3>
+                        <h4>上午6:00~下午6:00</h4>
+                    </header>
+                    <figure><img src="./weatherIcon.多雲時陰.svg." alt="" /></figure>
+                    <h4>晴時多雲</h4>
+                </article>
+            </div>
         </>
     )
 }
-
 export default App

@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #ccc;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-family: sans-serif;
+}
+.city {
+    background-color: #ccc;
+}
+.weather {
+    display: flex;
+    justify-items: center;
+    border-color: black
+}
